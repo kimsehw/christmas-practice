@@ -49,4 +49,13 @@ public class Orders {
         }
         return totalAmount;
     }
+
+    public boolean isAllBeverage() {
+        for (Order order : orders) {
+            if (!order.isBeverage()) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

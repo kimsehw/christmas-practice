@@ -36,4 +36,8 @@ public class Order {
     public int getTotalPrice() {
         return orderInformation.getTotalPrice(quantity);
     }
+
+    public boolean isBeverage() {
+        return orderInformation.isBeverage();
+    }
 }

@@ -34,4 +34,8 @@ public enum Menu {
     public int getTotalPrice(int quantity) {
         return price * quantity;
     }
+
+    public boolean isBeverage() {
+        return menuCategory == MenuCategory.BEVERAGE;
+    }
 }
