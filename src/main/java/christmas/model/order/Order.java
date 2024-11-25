@@ -45,4 +45,9 @@ public class Order {
     public boolean categoryDiscount(MenuCategory menuCategory) {
         return orderInformation.isTarget(menuCategory);
     }
+
+    @Override
+    public String toString() {
+        return orderName + " " + Integer.toString(quantity) + "개";
+    }
 }

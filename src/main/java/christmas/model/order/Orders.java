@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 public class Orders {
 
+    private static final String LINE_SEPARATOR = System.lineSeparator();
     public static final int MAX_QUANTITY = 20;
     private final List<Order> orders;
 
@@ -76,5 +77,13 @@ public class Orders {
             return MenuCategory.MAIN;
         }
         return MenuCategory.DESERT;
+    }
+
+    public String makeMenuMessage() {
+        StringBuilder message = new StringBuilder();
+        for (Order order : orders) {
+            message.append(order.toString()).append(LINE_SEPARATOR);
+        }
+        return message.toString();
     }
 }
