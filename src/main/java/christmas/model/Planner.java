@@ -38,7 +38,7 @@ public class Planner {
     }
 
     private boolean canEvent(int totalAmount, boolean isAllBeverage) {
-        return (totalAmount >= 10000 || !isAllBeverage);
+        return (totalAmount >= 10000 && !isAllBeverage);
     }
 
     private boolean canGetEvent(int totalAmount) {
