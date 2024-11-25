@@ -15,8 +15,8 @@ public class InputOrderParser {
     public static final int NAME_AND_QUANTITY_FORMAT_SIZE = 2;
     public static final int MIN_ORDER = 1;
 
-    public InputOrderParser(String input) {
-        List<Order> inputOrders = parse(input);
+    public Orders parseOrders(String input) {
+        return new Orders(parse(input));
     }
 
 
