@@ -42,8 +42,20 @@ public class Order {
         return orderInformation.isBeverage();
     }
 
-    public boolean categoryDiscount(MenuCategory menuCategory) {
+    public boolean isTarget(MenuCategory menuCategory) {
         return orderInformation.isTarget(menuCategory);
+    }
+
+    public boolean isChampagne() {
+        return orderName.equals("샴페인");
+    }
+
+    public void reduceQuantity() {
+        quantity--;
+    }
+
+    public boolean isRemain() {
+        return quantity > 0;
     }
 
     @Override

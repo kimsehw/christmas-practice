@@ -16,6 +16,7 @@ public class Planner {
         int wholeDiscount = dayDiscount + specialDiscount + dDayDiscount;
         if (canGetEvent) {
             wholeDiscount += 25_000;
+            orders.champagneEvent();
         }
         int afterDiscount = totalAmount - wholeDiscount;
         String badge = getBadge(wholeDiscount);
@@ -42,6 +43,6 @@ public class Planner {
     }
 
     private boolean canGetEvent(int totalAmount) {
-        return totalAmount > 120_000;
+        return totalAmount >= 120_000;
     }
 }

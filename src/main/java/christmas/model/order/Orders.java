@@ -65,8 +65,8 @@ public class Orders {
         MenuCategory target = getTargetMenuCategory(isWeekend);
         int totalDiscount = 0;
         for (Order order : orders) {
-            if (order.categoryDiscount(target)) {
-                totalDiscount += 1;
+            if (order.isTarget(target)) {
+                totalDiscount += order.getQuantity();
             }
         }
         return totalDiscount * 2023;
@@ -82,8 +82,19 @@ public class Orders {
     public String makeMenuMessage() {
         StringBuilder message = new StringBuilder();
         for (Order order : orders) {
-            message.append(order.toString()).append(LINE_SEPARATOR);
+            if (order.isRemain()) {
+                message.append(order.toString()).append(LINE_SEPARATOR);
+            }
         }
         return message.toString();
     }
+
+    public void champagneEvent() {
+        for (Order order : orders) {
+            if (order.isChampagne()) {
+                order.reduceQuantity();
+            }
+        }
+    }
 }
+
