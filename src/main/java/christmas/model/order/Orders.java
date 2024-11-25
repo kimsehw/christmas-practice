@@ -41,4 +41,12 @@ public class Orders {
             throw new InputException(ExceptionType.INVALID_ORDER_INPUT_EXCEPTION);
         }
     }
+
+    public int getTotalAmount() {
+        int totalAmount = 0;
+        for (Order order : orders) {
+            totalAmount += order.getTotalPrice();
+        }
+        return totalAmount;
+    }
 }

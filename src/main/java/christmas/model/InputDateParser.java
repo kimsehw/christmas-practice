@@ -3,20 +3,16 @@ package christmas.model;
 import christmas.exception.ExceptionType;
 import christmas.exception.InputException;
 
-public class DateInput {
+public class InputDateParser {
 
     public static final int MIN_DATE = 1;
     public static final int MAX_DATE = 31;
-    private final int date;
 
-    public DateInput(String inputDate) {
-        this.date = parse(inputDate);
-    }
 
-    private int parse(String input) {
+    public Date parse(String input) {
         int date = validateNumberFormat(input);
         validateDateValidRange(date);
-        return date;
+        return new Date(date);
     }
 
     private static void validateDateValidRange(int date) {

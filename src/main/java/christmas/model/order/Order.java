@@ -32,4 +32,8 @@ public class Order {
     public int getQuantity() {
         return quantity;
     }
+
+    public int getTotalPrice() {
+        return orderInformation.getTotalPrice(quantity);
+    }
 }

@@ -1,7 +1,5 @@
 package christmas.model.menu;
 
-import java.util.Arrays;
-
 public enum Menu {
     MUSHROOM_SOUP("양송이수프", 6_000, MenuCategory.APPETIZER),
     TAPAS("타파스", 5_500, MenuCategory.APPETIZER),
@@ -29,23 +27,11 @@ public enum Menu {
         this.menuCategory = menuCategory;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public boolean isSameWithOrder(String orderName) {
         return orderName.equals(name);
     }
 
-    public int getPrice() {
-        return this.price;
-    }
-
-    public MenuCategory getMenuCategory() {
-        return menuCategory;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.stream(Menu.values()).anyMatch(v -> v.getName().equals("양송이수프")));
+    public int getTotalPrice(int quantity) {
+        return price * quantity;
     }
 }
