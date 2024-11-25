@@ -17,8 +17,9 @@ public class Planner {
         if (canGetEvent) {
             wholeDiscount += 25_000;
             orders.champagneEvent();
+            totalAmount = orders.getTotalAmount();
         }
-        int afterDiscount = totalAmount - wholeDiscount;
+        int afterDiscount = totalAmount - wholeDiscount + 25_000;
         String badge = getBadge(wholeDiscount);
         String ordersMessage = orders.makeMenuMessage();
         return new Receipt(ordersMessage, totalAmount, canEvent, dDayDiscount, dayDiscount, specialDiscount,
