@@ -3,6 +3,7 @@ package christmas.model.order;
 import christmas.exception.ExceptionType;
 import christmas.exception.InputException;
 import christmas.model.menu.Menu;
+import christmas.model.menu.MenuCategory;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -57,5 +58,23 @@ public class Orders {
             }
         }
         return true;
+    }
+
+    public int howMuchDayDiscount(boolean isWeekend) {
+        MenuCategory target = getTargetMenuCategory(isWeekend);
+        int totalDiscount = 0;
+        for (Order order : orders) {
+            if (order.categoryDiscount(target)) {
+                totalDiscount += 1;
+            }
+        }
+        return totalDiscount * 2023;
+    }
+
+    private MenuCategory getTargetMenuCategory(boolean isWeekend) {
+        if (isWeekend) {
+            return MenuCategory.MAIN;
+        }
+        return MenuCategory.DESERT;
     }
 }

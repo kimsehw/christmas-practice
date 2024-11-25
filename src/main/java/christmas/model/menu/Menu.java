@@ -38,4 +38,8 @@ public enum Menu {
     public boolean isBeverage() {
         return menuCategory == MenuCategory.BEVERAGE;
     }
+
+    public boolean isTarget(MenuCategory target) {
+        return menuCategory == target;
+    }
 }

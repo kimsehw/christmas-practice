@@ -3,6 +3,7 @@ package christmas.model.order;
 import christmas.exception.ExceptionType;
 import christmas.exception.InputException;
 import christmas.model.menu.Menu;
+import christmas.model.menu.MenuCategory;
 
 public class Order {
 
@@ -39,5 +40,9 @@ public class Order {
 
     public boolean isBeverage() {
         return orderInformation.isBeverage();
+    }
+
+    public boolean categoryDiscount(MenuCategory menuCategory) {
+        return orderInformation.isTarget(menuCategory);
     }
 }
