@@ -3,13 +3,13 @@ package christmas.model;
 import christmas.exception.ExceptionType;
 import christmas.exception.InputException;
 
-public class InputDate {
+public class DateInput {
 
     public static final int MIN_DATE = 1;
     public static final int MAX_DATE = 31;
     private final int date;
 
-    public InputDate(String inputDate) {
+    public DateInput(String inputDate) {
         this.date = parse(inputDate);
     }
 
